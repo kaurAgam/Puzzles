@@ -1,1 +1,59 @@
 
+1) counting the number of squares on chessboard
+
+HOW TO SOLVE?
+no. of squares on each side =8;
+no of squares of size unit size = 8*8 =64;
+no of squares of size 2*unit size = (8-1)*(8-1) = 49
+no of squares of size 3*unit size = (8-2)*(8-2) = 36
+no of squares of size 4*unit size = 25
+no of squares of size 5*unit size = 16
+no of squares of size 6*unit size = 9
+no of squares of size 7*unit size = 4
+no of squares of size 8*unit size = 1
+i.e. TOTAL = 64+ 49+ 36+ 25 +16 +9 +4 + 1 =204
+i.e. no. of squares on a hypothetical chess-board having n boxes each side = Σn^2 = n(n+1)(2n+1)/6
+in this case of 8x8 chessboard;
+
+total number of squares = 8*9*17/6=204
+
+2) There are 25 horses among which you need to find out the fastest 3 horses. You can conduct a race among at most 5. Find out the minimum no. of races that are required to get the top 3 horses.
+
+one might think that 5 race amoung 5 horses each and then a race among the previously winning horses will give us the top 3
+but imagine a scenario in which the horse in race-2 that came second has speed higher than the horese that came fiirst in race-1 this will lead to erroneous result
+
+So then 
+we organize 5 races first ---> select top 3 from each race (5*3=15 selected)
+3 more races of 5 horse each ---> again select top 3 horses (3*3=9 selected)
+2 more races of 4 and 5 horses ----> select top 3  (2*3=6 selected)
+2 more races
+total of 12 races to get the top 3
+
+but we can do better
+HOW?
+-----------------------------------------------------
+ROUND 1 ( 5 races of random sets (A,B,C,D,E) (size=5) of horses ) ---> (5 races)
+for next round 
+set 1(say) -> round 1 winners of each set
+
+ROUND 2 ( 1 race of  set 1 horses i.e winners of ROUND 1) --->(1 race)
+the horse that wins this race is the fastes
+the horses that fail to make into top 3 are removed out of the race so are their round one sets (since the horses in those sets are slower that these horses => slower then round 2 top 3)
+now we are lest with 
+horse #11 h12 h13 h14 h15
+horse #21 h22 h23 h24 h25
+horse #31 h32 h33 h34 h35
+
+horses acc. spees acc. round 2 and their round 1 sets
+
+ROUND-3
+h#11 is fastest
+for second spot -> h21 h12 h13 compete
+for third spot -> h31 h22  compete
+ therefore 1 more race for second spot and third spot 
+ 
+ total no of races = 5+1+1
+
+
+  
+
